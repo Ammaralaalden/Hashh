@@ -141,10 +141,10 @@ size_t HashTable::hash_function(const KeyType &key) const
     
 	for (char c : key) 
 	{
-		hash = hash * 127 + static_cast<size_t>(c);
+		hash = hash * 31 + static_cast<size_t>(c);
 	}
     
 	double val = hash * A;
 	val -= static_cast<size_t>(val); // дробная часть
-	return static_cast<size_t>(table_size * val);
+	return static_cast<size_t>(_capacity * val);
 }
