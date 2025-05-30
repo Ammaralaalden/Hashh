@@ -134,7 +134,7 @@ double HashTable::getLoadFactor()
 	return static_cast<double>(_filled) / _capacity;
 }
 
-size_t HashTable::hash_function(const KeyType &key) const // Возвращает индекс для ключа
+size_t HashTable::hash_function(const KeyType &key) const 
 {
 	const double A = 0.618033988749895;
 	size_t hash = 0;
